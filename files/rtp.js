@@ -1,5 +1,6 @@
 /*
-v 1.17 reversão para atob( simplificada [astúcia - créditos: @cisnemania]
+2021-05-05
+v 1.18 sintese de master.mpd - créditos: ZWAME\@MaFiBoSS
 */
 // region {popup}
 let activeTabUrl;
@@ -57,10 +58,8 @@ chrome.tabs.query({
           videoName = getVName(docBody);
           // which case?
           docBody = docBody.replace(/\s+/g, '');
-          if (docBody.indexOf("fileKey:atob(decodeURIComponent(") > 0) {
-            videoUrl = getURL(docBody, "fileKey:atob(");
-          } else if (docBody.indexOf('fileKey:"/') > 0) {
-            videoUrl = getURL(docBody, 'fileKey:"/');
+          if (docBody.indexOf('"contentUrl"') > 0) {
+            videoUrl = getURL(docBody, '"contentUrl:"');
           } else {
             console.error("nem um nem outro?");
             // check new RTP Play strategies:
@@ -76,24 +75,14 @@ chrome.tabs.query({
             let trueVideoUrl = "";
             let preVideoUrl = "";
             let tmpVideoUrl = "";
-            const preface = '"aHR0cHM","6Ly9zdH","JlYW1pb","mctYXJx","dWl2by1","vbmRlbW","FuZC5yd","HAucHQv",'
             switch (type) {
-              case "fileKey:atob(":
-                fromIndex = body.indexOf("[", body.indexOf("fileKey:atob(decodeURIComponent("));
-                toIndex = body.indexOf("]", fromIndex) + 1;
-                preVideoUrl = body.substring(fromIndex + 1, toIndex - 1);
-                preVideoUrl = preface + preVideoUrl;
-                trueVideoUrl = atob(decodeURIComponent(eval('[' + preVideoUrl + ']').join("")));
-                break;
-              case 'fileKey:"/':
-                fromIndex = body.indexOf('fileKey:"/');
-                toIndex = body.indexOf(",", fromIndex) + 1;
-                preVideoUrl = body.substring(fromIndex + ('fileKey:"').length, toIndex - 2);
-                tmpVideoUrl = encodeURIComponent(btoa(preVideoUrl)).split(/(.{7})/).filter(O => O)
-                tmpVideoUrl = tmpVideoUrl.toString();
-                tmpVideoUrl = '"' + tmpVideoUrl.replace(/,/g, '","') + '"';
-                tmpVideoUrl = preface + tmpVideoUrl;
-                trueVideoUrl = atob(decodeURIComponent(eval('[' + tmpVideoUrl + ']').join("")));
+              case '"contentUrl:"':
+                fromIndex = body.indexOf('"contentUrl"') + ('"contentUrl":').length;
+                toIndex = body.indexOf("_videoprv.mp4", fromIndex);
+                preVideoUrl = body.substring(fromIndex + 1, toIndex);
+                preVideoUrl = preVideoUrl.replace("cdn","streaming");
+                preVideoUrl = preVideoUrl.replace("preview/","");
+                trueVideoUrl = preVideoUrl + "/master.mpd"
                 break;
             }
             return trueVideoUrl;
@@ -144,17 +133,12 @@ chrome.tabs.query({
               }
               let myVideoUrl = obj.vurl;
               let videoName = obj.name;
-			  /*
               // REMOVER, NÃO FAZ PARTE DO PRODUTO FINAL!
-              injectXdiv(obj); // this is in popup.html and adds (several) <div class="
-			  */
+              // injectXdiv(obj); // this is in popup.html and adds (several) <div class="
               // testar em OPERA e Firefox
-              chrome.downloads.download({
-                url: myVideoUrl,
-                filename: videoName,
-                conflictAction: 'uniquify',
-                saveAs: true
-              })
+              (async () => {
+                await navigator.clipboard.writeText(`Python youtube-dl -o \"${videoName}\" \"${myVideoUrl}\"`);
+              })();
             } catch (err) {
               console.error(err.name);
               console.error(err.message);
@@ -162,19 +146,5 @@ chrome.tabs.query({
           });
         });
       });
-      // REMOVER, NÃO FAZ PARTE DO PRODUTO FINAL!
-      // function injectXdiv(xurl = "<strong>Hi there!</strong> inside popup.") {
-      function injectXdiv(obj) {
-        if (exists = document.getElementById("ndiv") == null) {
-          let ndiv = document.createElement('div');
-          ndiv.id = "ndiv"; // inside page activetab Elements
-          ndiv.innerHTML = obj.name;
-          document.body.append(ndiv); // nesta altura o popup.html "incha"
-          let udiv = document.createElement('div');
-          udiv.id = "udiv"; // inside page activetab Elements
-          udiv.innerHTML = obj.vurl;
-          document.body.append(udiv); // nesta altura o popup.html "incha"
-        }
-      }
     });
   });
