@@ -4,22 +4,41 @@ title: OPTO Sic
 ---
 <div class="blurb">
 	<h2>Sobre OPTO Sic Notícias<img src="https://opto.sic.pt/app/images/splash/opta_header_screen_logo.svg?rev=1634568687570" width=20% ></h2>
-	<p>Baixar e guardar localmente vídeos servidos pela OPTO Sic Notícias
+	<p>Baixar e guardar localmente vídeos servidos pela OPTO Sic Notícias.
 	
 	</p>
 </div><!-- /.blurb -->
 <hr>
-<div>Objectivo: fazer download de vídeos de OPTO Sic<br>
+<div style="line-height:110%">Objectivo: fazer download de vídeos de OPTO Sic<br>
 	Descrevo a seguir uma tentativa que falhou.<br>
 	<hr>
-	Sem conhecimentos da tecnologia usada pela OPTO suficientes para programar uma solução decente, pensei usar uma aplicação (programa) comercial, com o qual já tenho conseguido resultados em sites semelhantes.<br>
+	Sem conhecimentos da tecnologia usada pela OPTO suficientes para programar uma solução decente, tentei usar uma aplicação (programa) comercial, que tem resultado em sites semelhantes.<br>
 	Trata-se do IDM (Internet Download Manager), um programa pago, com 30 dias de "free trial".<br>
+	<br>
 	Mas quem sabe o que vem agarrado ao programa?
 	É saudável desconfiar destes "free trial".<br>
 	E em geral depois de instalado da primeira vez, o sw esconde no disco rígido informação que dali para a frente impossibilita novo uso.
 	
-	Isto sugere a seguinte precaução, que arruma estes dois problemas:<br>
+	O que sugere a seguinte precaução, que arruma estes dois problemas:<br>
 	<h3>Correr o programa no Windows Sandbox</h3>
+	<br>
+	A primeira coisa é, se activar o Windows Sandbox (no Windows 10).<br>
+	O meu PC é um AMD, talvez as coisas sejam diferentes para INTEL.<br>
+	A descrição está abreviada, procurar na www informação detalhada e actualizada.<br>
+	cmd\systeminfo.exe:
+...
+Hyper-V Requirements:      VM Monitor Mode Extensions: Yes
+                           Virtualization Enabled In Firmware: No
+                           Second Level Address Translation: Yes
+                           Data Execution Prevention Available: Yes
+tenho de no BIOS enablar a Virtualizatioon in firmware... será possível?
+Foi o que fiz, DEL - OC - CPU Features VBM e ENABLED
+Agora task manager\performance diz que está "Virtualization enabled"
+Depois:
+https://www.windowscentral.com/how-use-windows-sandbox-windows-10-may-2019-update
+Control Panel, Windows Features ON/OFF, turn on Sandbox
+Seguido de um Reboot
+Depois destes passos já me aparece no Start\Windows Sandbox
 .
 	<br>
 	
