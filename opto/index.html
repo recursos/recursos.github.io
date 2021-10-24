@@ -9,15 +9,15 @@ title: OPTO Sic
 	</p>
 </div><!-- /.blurb -->
 <hr>
-<div style="line-height:140%">Objectivo: fazer download de vídeos de OPTO Sic<br>
+<div style="line-height:150%">Objectivo: fazer download de vídeos de OPTO Sic<br>
 	Descrevo a seguir uma tentativa que falhou.<br>
 	<hr>
 	Sem conhecimentos da tecnologia usada pela OPTO suficientes para programar uma solução decente, tentei usar uma aplicação (programa) comercial, que tem resultado em sites semelhantes.<br>
 	Trata-se do IDM (Internet Download Manager), um programa pago, com 30 dias de "free trial".<br>
 	<br>
 	Mas quem sabe o que vem agarrado ao programa?
-	É saudável desconfiar destes "free trial".<br>
-	E em geral depois de instalado da primeira vez, o sw esconde no disco rígido informação que dali para a frente impossibilita novo uso.
+	Desconfiar sempre destes "free trial"!<br>
+	E depois de instalado uma primeira vez, o sw esconde no disco rígido informação que dali para a frente impossibilita novo uso.
 	
 	O que sugere a seguinte precaução, que arruma estes dois problemas:<br>
 	<h3>Correr o programa no Windows Sandbox</h3>
@@ -25,12 +25,13 @@ title: OPTO Sic
 	A primeira coisa é, se activar o Windows Sandbox (no Windows 10).<br>
 	O meu PC é um AMD, talvez as coisas sejam diferentes para INTEL.<br>
 	A descrição está abreviada, procurar na www informação detalhada e actualizada.<br>
-	cmd\systeminfo.exe:
+	cmd\systeminfo.exe:<br>
 ...
-Hyper-V Requirements:      VM Monitor Mode Extensions: Yes
-                           Virtualization Enabled In Firmware: No
-                           Second Level Address Translation: Yes
-                           Data Execution Prevention Available: Yes
+Hyper-V Requirements:      VM Monitor Mode Extensions: Yes<br>
+                           Virtualization Enabled In Firmware: No<br>
+                           Second Level Address Translation: Yes<br>
+                           Data Execution Prevention Available: Yes<br>
+	<br>
 tenho de no BIOS enablar a Virtualizatioon in firmware... será possível?
 Foi o que fiz, DEL - OC - CPU Features VBM e ENABLED
 Agora task manager\performance diz que está "Virtualization enabled"
