@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>GEO links</title>
+<!-- https://logs.rf.gd/geo/geo_links.html?i=1 -->
+
+<script>
+        // Check if the 'cache' parameter is not present
+        if (!window.location.search.includes('cache=')) {
+            // Force a fresh reload
+            window.location.href = window.location.href.split('?')[0] + '?cache=' + new Date().getTime();
+        }
+    </script>
+	
+<style>
+    html * {
+    font-family: Verdana, Inter, Menlo;
+    }
+    html {
+    max-width: 620px;
+    margin: 0 auto;
+    background: #eee; /* Fills the page */
+    position: relative; /* Fix for absolute positioning */
+    }
+    td {
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-right:10px;
+    padding-left:10px;
+    }
+
+    /* <!-- CSS border
+    https://www.computerhope.com/issues/ch001392.htm
+    --> */
+    .border_my {
+    border-width:2px;
+    border-style:solid;
+    border-color:#FF0000;
+    }
+
+    <!-- outlines -->
+    p {outline-color:red;}
+    p.solid {outline-style: solid;}
+    p.double {outline-style: double;}
+    /* https://iamkate.com/code/tree-views/ */
+    .tree li{
+    font: 16px Verdana;
+    display      : block;
+    position     : relative;
+    padding-left : calc(2 * var(--spacing) - var(--radius) - 2px);
+    }
+
+    .tree ul{
+    margin-left  : calc(var(--radius) - var(--spacing));
+    padding-left : 0;
+    }
+    </style>
+    <style>
+    /* */
+    details {
+    font: 16px Verdana, Inter, Menlo, Consolas, "Open Sans", Calibri, sans-serif;
+    width: 620px;
+    }
+
+details summary > * {
+  display: inline;
+}
+    details > summary {
+    font: 16px  Menlo, Consolas, Verdana;
+    padding: 2px 6px;
+    width: 15em;
+    background-color: #ddd;
+    border: none;
+    box-shadow: 3px 3px 4px black;
+    cursor: pointer;
+    /* list-style: none; */
+
+    }
+
+    details > p {
+    font: 16px Menlo, Consolas, Verdana;
+    border-radius: 0 0 10px 10px;
+    background-color: #ddd;
+    padding: 2px 6px;
+    margin: 0;
+    box-shadow: 3px 3px 4px black;
+    }
+    details > ol, li {
+    font: 16px  Menlo, Consolas, Verdana;
+    }
+    /* */
+    </style>
+    <!-- https://stackoverflow.com/questions/54633409/how-to-align-images-horizontally-side-by-side-with-captions-underneath -->
+
+    <style>
+
+    .container {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    }
+
+    .photos{
+    display:flex;
+    justify-content:center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    flex-grow: 1;
+    }
+
+    .image{
+    display:block;
+
+    }
+
+    .word{
+    display:block;
+    width: 100%;
+    text-align:center;
+
+    }
+    /*
+    CSS border
+    https://www.computerhope.com/issues/ch001392.htm
+
+    .borderme {
+    border-width:2px;
+    border-style:solid;
+    border-color:#FF0000;
+    }
+    */
+    </style>
+    <style>
+
+    .left, .right {
+    display: inline-block;
+    }
+    .container {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    }
+    </style>
+    <style>
+
+    /* If you want an image to scale down if it has to, but never scale up to be larger than its original size, use max-width: 100%: */
+
+    .responsive {
+    max-width: 100%;
+    height: auto;
+    }
+    </style>
+    <style type="text/css">
+    table.c1 {border:1px solid black}
+    </style>
+</head>
+
+<body>
+<div>
+A página aconselhada é a (1)<br>
+As restantes foram ensaios de <i>style</i>
+</div>
+<p>
+<hr>
+(1)<br>
+<a href="https://logs.rf.gd/geo/old_maps_TABLE_fig_caption.html"> old_maps_TABLE_fig_caption</a><br>
+Apresentação tipo TABLE feita com tags &lt;DIV&gt; classes figure e figcaption <br>
+<p>
+Idem, sob a forma de PPTX:
+<p>
+(1)<br>
+<a href="https://logs.rf.gd/geo/presentation.pptx"> presentation.pptx</a><br>
+Apresentação em PPTX (o link faz download)<br>
+<p>
+
+<hr>
+
+   <ul class="tree">
+      <details>
+        <summary>
+          Arquivo morto
+        </summary>
+        <hr>
+        <h3>
+          Arquivados sem interesse:
+        </h3>
+(2)<br>
+<a href="https://logs.rf.gd/geo/old_maps_TABLE.html">
+ old_maps_TABLE.html</a><br>
+Apresentação tipo TABLE feita com tags &lt;DIV&gt;<br>
+<hr>
+
+(3)<br>
+<a href="https://logs.rf.gd/geo/table_DIV_BLOCK.html">
+table_DIV_BLOCK</a><br>
+Apresentação tipo TABLE feita com tags &lt;DIV&gt; class BLOCK<br>
+<hr>
+
+
+<hr>
+<hr><p>
+<h2>Lixos arquivados:</h2>
+<a href="https://logs.rf.gd/geo/01_geo.html">https://logs.rf.gd/geo/01_geo.html</a><br>
+<a href="https://logs.rf.gd/geo/index-en.html">https://logs.rf.gd/geo/index-en.html</a><br>
+Usa w3.css, sem interesse<br>
+<a href="https://logs.rf.gd/geo/index.pt.works.00.html">https://logs.rf.gd/geo/index.pt.works.00.html</a><br>
+Imagens e caprions centradas, incompleta!<br>
+Com TABLE de DIVs com CSS para formatar.<br>
+
+<a href="https://logs.rf.gd/geo/index_last.html">https://logs.rf.gd/geo/index_last.html</a><br>
+Parecida com a anterior? sem interesse?<br>
+<a href="https://logs.rf.gd/geo/table_DIV_basic.html">https://logs.rf.gd/geo/table_DIV_basic.html</a><br>
+Com TABLE de DIVs com CSS para formatar.<br>
+Parece sem interesse<br>
+
+<p>
+<hr>
+Mais LIXOS:<br>
+<a href="https://logs.rf.gd/geo/images">https://logs.rf.gd/geo/images</a><br>
+<a href="https://logs.rf.gd/geo/index_1.html">https://logs.rf.gd/geo/index_1.html</a><br>
+<a href="https://logs.rf.gd/geo/index_2.html">https://logs.rf.gd/geo/index_2.html</a><br>
+
+</p>
+        </details>
+      </ul><!-- passagem a rectangulos -->
+      <script>
+      <!-- https://lebcit.github.io/posts/automatically-close-other-details/ -->
+      /** Close others <details> tag */
+      const allDetails = document.querySelectorAll("details")
+
+      allDetails.forEach((details) => {
+      details.addEventListener("toggle", (e) => {
+      if (details.open) {
+        allDetails.forEach((details) => {
+          if (details != e.target && details.open) {
+            details.open = false
+          }
+        })
+      }
+      })
+      })
+      </script>
+    </ul>
+</body>
+</html>
