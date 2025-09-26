@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>GEO links</title>
+  <!-- https://logs.rf.gd/geo/geo_links.html?i=1 -->
+  <script>
+    // Force a fresh reload if 'cache' param is missing
+    if (!window.location.search.includes('cache=')) {
+      window.location.href = window.location.pathname + '?cache=' + Date.now();
+    }
+  </script>
+  <style>
+    html, body {
+      font-family: Verdana, Inter, Menlo, Consolas, "Open Sans", Calibri, sans-serif;
+      margin: 0 auto;
+      background: #fff;
+      max-width: 800px;
+    }
+    td {
+      padding: 10px;
+    }
+    .border_my {
+      border: 2px solid #FF0000;
+    }
+    p { outline-color: red; }
+    p.solid { outline-style: solid; }
+    p.double { outline-style: double; }
+    .tree li, .tree ul, .tree details, .tree summary {
+      font-size: 16px;
+      font-family: inherit;
+    }
+    .tree li {
+      display: block;
+      position: relative;
+      padding-left: 2em;
+    }
+    .tree ul {
+      margin-left: 1em;
+      padding-left: 0;
+    }
+    details {
+      width: 100%;
+      margin-bottom: 1em;
+      background: #f9f9f9;
+      border-radius: 5px;
+      box-shadow: 2px 2px 6px #ccc;
+    }
+    details > summary {
+      padding: 6px;
+      background-color: #ddd;
+      border: none;
+      box-shadow: 2px 2px 4px #bbb;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    details > * {
+      margin: 0.5em 0 0.5em 2em;
+    }
+    .container, .photos {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1em;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+    .image { display: block; }
+    .word {
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+    .responsive {
+      max-width: 100%;
+      height: auto;
+    }
+    table.c1 { border: 1px solid black; }
+    hr { margin: 1.2em 0; }
+  </style>
+</head>
+<body>
+  <div>
+    A página aconselhada é a (1)<br>
+    As restantes foram ensaios de <i>style</i>
+  </div>
+  <hr>
+  <p>
+    (1)<br>
+    <a href="https://logs.rf.gd/geo/old_maps_TABLE_fig_caption.html">
+      old_maps_TABLE_fig_caption</a><br>
+    Apresentação tipo TABLE feita com tags &lt;DIV&gt; classes figure e figcaption<br>
+  </p>
+  <p>
+    Idem, sob a forma de PPTX:
+  </p>
+  <p>
+    (1)<br>
+    <a href="https://logs.rf.gd/geo/presentation.pptx">presentation.pptx</a><br>
+    Apresentação em PPTX (o link faz download)<br>
+  </p>
+  <hr>
+  <ul class="tree">
+    <li>
+      <details>
+        <summary>Arquivo morto</summary>
+        <hr>
+        <h3>Arquivados sem interesse:</h3>
+        (2)<br>
+        <a href="https://logs.rf.gd/geo/old_maps_TABLE.html">old_maps_TABLE.html</a><br>
+        Apresentação tipo TABLE feita com tags &lt;DIV&gt;<br>
+        <hr>
+        (3)<br>
+        <a href="https://logs.rf.gd/geo/table_DIV_BLOCK.html">table_DIV_BLOCK</a><br>
+        Apresentação tipo TABLE feita com tags &lt;DIV&gt; class BLOCK<br>
+        <hr>
+        <h2>Lixos arquivados:</h2>
+        <a href="https://logs.rf.gd/geo/01_geo.html">01_geo.html</a><br>
+        <a href="https://logs.rf.gd/geo/index-en.html">index-en.html</a><br>
+        Usa w3.css, sem interesse<br>
+        <a href="https://logs.rf.gd/geo/index.pt.works.00.html">index.pt.works.00.html</a><br>
+        Imagens e caprions centradas, incompleta!<br>
+        Com TABLE de DIVs com CSS para formatar.<br>
+        <a href="https://logs.rf.gd/geo/index_last.html">index_last.html</a><br>
+        Parecida com a anterior? sem interesse?<br>
+        <a href="https://logs.rf.gd/geo/table_DIV_basic.html">table_DIV_basic.html</a><br>
+        Com TABLE de DIVs com CSS para formatar.<br>
+        Parece sem interesse<br>
+        <hr>
+        Mais LIXOS:<br>
+        <a href="https://logs.rf.gd/geo/images">images</a><br>
+        <a href="https://logs.rf.gd/geo/index_1.html">index_1.html</a><br>
+        <a href="https://logs.rf.gd/geo/index_2.html">index_2.html</a><br>
+      </details>
+    </li>
+  </ul>
+  <!-- Script to close other <details> when one is opened -->
+  <script>
+    document.querySelectorAll("details").forEach(details => {
+      details.addEventListener("toggle", function(e) {
+        if (details.open) {
+          document.querySelectorAll("details").forEach(other => {
+            if (other !== details && other.open) other.open = false;
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
